@@ -11,12 +11,12 @@ blog_theme: light # Or use dark
 # Profile information
 name: Sarah Lean
 tagline: Cloud Solution Architect
-about-description: # Add Discription
+about-description:I am a highly motivated, thorough and results driven Infrastructure Engineer who, at a young age, fell in love with technology and in my 11+ years in the IT industry, has a deep and wide ranging knowledge of a variety of best-in-breed technologies specializing in Microsoft, VMware and Veeam. Through my work in the IT Managed Services sector I have many years’ experience dealing with IT systems, requirements gathering and stakeholder management from varying industries including the Scottish drinks industry, commercial call centres, manufacturing, and the arts. # Add Discription
 pic: sarah3_four.jpg  # Place a 200x200 picture inside /assets/img/ folder and provide the name of the file below
 
 # Contact links
 website: www.sarahlean.com # Add your website, do not add http://
-linkedin: # Add your Linkedin handle
+linkedin: sazlean # Add your Linkedin handle
 github: weeyin83 # Add your Github handle
 twitter: '@techielass' # Add your Twitter handle
 
