@@ -32,4 +32,7 @@ Here is my bio in various formats that you can use for advertising at your event
 Below are a few photos that you can use as well:
 <p>
 <img src="/assets/img/sarah3_four.jpg" alt="Sarah profile picture 1" style="width: 200px;"/>
+<img src="/assets/img/sarah_purple_headshot.jpg" alt="Sarah profile picture 2" style="width: 200px;"/>
+<img src="/assets/img/sarah_pink_shirt.jpg" alt="Sarah profile picture 3" style="width: 200px;"/>
+<img src="/assets/img/sarah_white_shirt.jpg" alt="Sarah profile picture 4" style="width: 200px;"/>
 </p>
