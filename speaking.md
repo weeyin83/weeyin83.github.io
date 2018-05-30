@@ -13,7 +13,7 @@ I speak at events of all sizes, conferences, meet-ups, user groups, events.
 
 ## My Talks
 
-I am happy to speak about prety much in relation to Azure.  Here are a few topics that I'm talking about at the moment and can deliver with hardly notice:
+I am happy to speak about prety much in relation to Azure.  Here are a few topics that I'm talking about at the moment and can deliver with hardly any notice:
 
 * Azure Policy
 * Governance in the Cloud
