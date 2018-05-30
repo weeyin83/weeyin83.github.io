@@ -30,4 +30,6 @@ Here is my bio in various formats that you can use for advertising at your event
 * **Short**: Sarah works for Microsoft as a Cloud Solution Architect.  She loves all things Cloud!
 
 Below are a few photos that you can use as well:
+<p>
 <img src="/assets/img/sarah3_four.jpg" alt="Sarah profile picture 1" style="width: 200px;"/>
+</p>
