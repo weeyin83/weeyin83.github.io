@@ -1,6 +1,5 @@
 title: Sarah Lean
-description: > # this means to ignore newlines until "baseurl:"
-Personal website of Sarah Lean, Cloud Solution Architect.  Sarah is a technical professional, blogger and user group founder. 
+description: Personal website of Sarah Lean, Cloud Solution Architect.  Sarah is a technical professional, blogger and user group founder. 
 baseurl: # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: ':title/'
