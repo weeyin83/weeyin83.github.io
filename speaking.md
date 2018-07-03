@@ -18,6 +18,7 @@ I am happy to speak about prety much in relation to Azure.  Here are a few topic
 * Azure Policy
 * Governance in the Cloud
 * Azure Migrate
+* Azure Cost Management by Cloudyn
 
 ## My Bio
 
