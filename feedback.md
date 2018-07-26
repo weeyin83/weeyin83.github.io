@@ -13,4 +13,4 @@ When I deliver a talk your feedback is important to me, it helps me to improve u
 
 To provide feedback for one of my talks, click on the image below: 
 
-<img src="/assets/img/feedback.png" alt="Feedback picture" style="width: 200px;"/>
+<a href="http://techielasssmilr-frontend.eastus.azurecontainer.io"><img src="/assets/img/feedback.png" alt="Feedback picture" style="width: 200px;"/></a>
