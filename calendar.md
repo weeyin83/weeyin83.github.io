@@ -7,7 +7,14 @@ permalink: /calendar/
     <h1 class="page-title">{{page.title}}</h1>
 </div>
 
+## Upcoming Events
 
-These are all the events that I'll be at in the future.
+I will be speaking at these upcoming events:
 
-<script type="text/javascript" src="https://sessionize.com/api/speaker/events/dfd224a3-4d3e-4699-847c-63124850fb0c/0x0xb33f69x"></script>
+* [TechUG Glasgow, 30th August, Glasgow UK](https;//www.technologyug.co.uk): Azure Migrate
+* [Evolve, 10th September, Birmingham UK](https://www.evolveconf.co.uk/): Governance in the Cloud
+* [SQLGLA, 14th September, Glasgow, UK](https://www.sqlgla.co.uk): Governance in the Cloud
+
+## Past Events
+
+* [Microsoft Cloud User Group, 31st July, Manchester UK](https://www.mscug.co.uk)
