@@ -26,7 +26,7 @@ Here is my bio in various formats that you can use for advertising at your event
 
 * **First Person**: I am a Cloud Solution Architect in the Customer Success Unit within Microsoft.  I have been with Microsoft since 2018, before that I worked for a variety of companies.  I have worked within IT deparments and worked for managed service providers.  I enjoy talking to customers and helping them find the right technology fit for their organisation.
 
-* **Third Person**: Sarah has held a broad variety of IT roles, from corporate IT departments to managed service providers. Most recently Sarah joined the Customer Success Unit within Microsoft as a Cloud Solution Architect. Part of Sarah's job involves keeping up to date on all the latest technologies in Azure – understanding how they really work and how to best leverage the various services/features to solve problems.
+* **Third Person**: Sarah has over 12 years experience within the IT industry, currently she is a Cloud Solution Architect for Microsoft based in the UK. With experience of both on premise and cloud solutions Sarah is able to understand the big picture and help businesses implement the right IT strategy for the future. Involved in the IT community she founded the Glasgow Azure User Group in May 2017. 
 
 * **Short**: Sarah works for Microsoft as a Cloud Solution Architect.  She loves all things Cloud!
 
