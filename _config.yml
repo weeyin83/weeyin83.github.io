@@ -1,5 +1,5 @@
 title: Sarah Lean
-description: Personal website of Sarah Lean, Cloud Solution Architect.  Sarah is a technical professional, blogger and user group founder. 
+description: Personal website of Sarah Lean, Cloud Advocate.  Sarah is a technical professional, blogger and user group founder. 
 baseurl: # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: ':title/'
@@ -7,7 +7,7 @@ blog_theme: light # Or use dark
 
 # Profile information
 name: Sarah Lean
-tagline: Cloud Solution Architect
+tagline: Cloud Advocate
 about-description: I am a highly motivated, thorough and results driven IT professional.  I fell in love with technology at an early age and have made it my career.  I have a deep and wide ranging knowledge of a variety of best-in-breed technologies. In recent years I have start to focus and specialise in all things Cloud, especially Microsoft Azure. 
  # Add Discription
 pic: sarah3_four.jpg  # Place a 200x200 picture inside /assets/img/ folder and provide the name of the file below
