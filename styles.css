@@ -1,111 +1,88 @@
-/* Custom properties/variables  */
+/* =====================================================================
+   Sarah Lean — 2026 refresh
+   Accessible dark palette with optional light mode via prefers-color-scheme.
+   ===================================================================== */
+
 :root {
-  --main-white: #edf7f6;
-  --main-red: #845883;
-  --main-blue: #ffa8B6;
-  --main-gray: #a28089;
+  --bg:         #0f1419;
+  --surface:    #1c2128;
+  --surface-2:  #262d36;
+  --border:     #334155;
+  --text:       #f1f5f9;
+  --text-muted: #cbd5e1;
+  --accent:     #c084fc; /* purple-400 — passes AA on dark bg */
+  --accent-hover: #d8b4fe;
+  --accent-ink: #1a0b2e;  /* dark text for use on accent backgrounds */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:         #fafafa;
+    --surface:    #ffffff;
+    --surface-2:  #f1f5f9;
+    --border:     #cbd5e1;
+    --text:       #0f172a;
+    --text-muted: #475569;
+    --accent:     #7c3aed; /* purple-600 — passes AA on light bg */
+    --accent-hover: #6d28d9;
+    --accent-ink: #ffffff;
+    --shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  }
 }
 
 /* Base reset */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-/* box-sizing and font sizing */
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+* { margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: inherit; }
 
 html {
   box-sizing: border-box;
-
-  /* Set font size for easy rem calculations
-   * default document font size = 16px, 1rem = 16px, 100% = 16px
-   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
-  */
-  font-size: 62.5%;
+  font-size: 62.5%; /* 1rem = 10px */
   scroll-behavior: smooth;
 }
 
-/* A few media query to set some font sizes at different screen sizes.
- * This helps automate a bit of responsiveness.
- * The trick is to use the rem unit for size values, margin and padding.
- * Because rem is relative to the document font size
- * when we scale up or down the font size on the document
- * it will affect all properties using rem units for the values.
-*/
-
-/* I am using the em unit for breakpoints
- * The calculation is the following
- * screen size divided by browser base font size
- * As an example: a breakpoint at 980px
- * 980px / 16px = 61.25em
-*/
-
-/* 1200px / 16px = 75em */
-@media (max-width: 75em) {
-  html {
-    font-size: 60%;
-  }
-}
-
-/* 980px / 16px = 61.25em */
-@media (max-width: 61.25em) {
-  html {
-    font-size: 58%;
-  }
-}
-
-/* 460px / 16px = 28.75em */
-@media (max-width: 28.75em) {
-  html {
-    font-size: 55%;
-  }
-}
-
-/* Base styles */
+@media (max-width: 75em)    { html { font-size: 60%; } }
+@media (max-width: 61.25em) { html { font-size: 58%; } }
+@media (max-width: 28.75em) { html { font-size: 55%; } }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem; /* 18px */
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 1.8rem;
   font-weight: 400;
-  line-height: 1.4;
-  color: var(--main-white);
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
 }
 
-h1,
-h2 {
-  font-family: 'Raleway', sans-serif;
+h1, h2 {
+  font-family: 'Raleway', system-ui, sans-serif;
   font-weight: 700;
   text-align: center;
 }
 
-h1 {
-  font-size: 6rem;
-}
+h1 { font-size: 6rem; line-height: 1.1; }
+h2 { font-size: 4.2rem; }
 
-h2 {
-  font-size: 4.2rem;
-}
-
-ul {
-  list-style: none;
-}
+ul { list-style: none; }
 
 a {
   text-decoration: none;
-  color: var(--main-white);
+  color: var(--text);
 }
 
-img {
-  display: block;
-  width: 100%;
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
 }
 
-/* nav */
+img { display: block; max-width: 100%; height: auto; }
+
+/* =====================================================================
+   Navigation
+   ===================================================================== */
 
 .nav {
   display: flex;
@@ -114,8 +91,9 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--main-red);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
   z-index: 10;
 }
 
@@ -125,139 +103,150 @@ img {
 }
 
 @media (max-width: 28.75em) {
-  .nav {
-    justify-content: center;
-  }
-
-  .nav-list {
-    margin: 0 1rem;
-  }
+  .nav { justify-content: center; }
+  .nav-list { margin: 0 1rem; }
 }
 
 .nav-list a {
   display: block;
-  font-size: 2.2rem;
-  padding: 2rem;
+  font-size: 2rem;
+  padding: 1.6rem 2rem;
+  color: var(--text);
+  transition: color 0.2s ease, background 0.2s ease;
 }
 
 .nav-list a:hover {
-  background: var(--main-blue);
+  color: var(--accent);
+  background: var(--surface-2);
 }
 
-/* Welcome section */
+/* =====================================================================
+   Welcome / hero
+   ===================================================================== */
 
 .welcome-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
   width: 100%;
-  height: 100vh;
-  background-color: #000;
-  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+  min-height: 100vh;
+  padding: 8rem 2rem;
+  background:
+    radial-gradient(ellipse at top, rgba(192, 132, 252, 0.15), transparent 60%),
+    var(--bg);
 }
 
-.welcome-section > p {
-  font-size: 3rem;
-  font-weight: 200;
-  font-style: italic;
-  color: var(--main-red);
+.hero-avatar {
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+  box-shadow: var(--shadow);
 }
 
-/* Projects section */
+.hero-tagline {
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 60rem;
+}
+
+/* =====================================================================
+   Projects
+   ===================================================================== */
 
 .projects-section {
   text-align: center;
   padding: 10rem 2rem;
-  background: var(--main-blue);
+  background: var(--surface);
 }
 
 .projects-section-header {
-  max-width: 640px;
+  max-width: 64rem;
   margin: 0 auto 6rem auto;
-  border-bottom: 0.2rem solid var(--main-white);
+  padding-bottom: 1.2rem;
+  border-bottom: 2px solid var(--accent);
 }
 
 @media (max-width: 28.75em) {
-  .projects-section-header {
-    font-size: 4rem;
-  }
+  .projects-section-header { font-size: 3.4rem; }
 }
 
-/* "Automagic" image grid using no media queries */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  gap: 4rem;
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  margin-bottom: 6rem;
+  max-width: 128rem;
+  margin: 0 auto 6rem auto;
 }
 
 @media (max-width: 30.625em) {
-  .projects-section {
-    padding: 6rem 1rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
+  .projects-section { padding: 6rem 1rem; }
+  .projects-grid { grid-template-columns: 1fr; }
 }
 
 .project {
-  background: var(--main-gray);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.project:hover,
+.project:focus-visible {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
 }
 
 .code {
-  color: var(--main-gray);
-  transition: color 0.3s ease-out;
+  color: var(--text-muted);
+  transition: color 0.25s ease;
 }
 
-.project:hover .code {
-  color: #8458B3;
+.project:hover .code,
+.project:focus-visible .code {
+  color: var(--accent);
 }
 
 .project-image {
-  height: calc(100% - 6.8rem);
   width: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
+  background: var(--bg);
 }
 
 .project-title {
-  font-size: 2rem;
-  padding: 2rem 0.5rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  padding: 2rem 1rem;
+  color: var(--text);
 }
+
+/* =====================================================================
+   Buttons
+   ===================================================================== */
 
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
-  border-radius: 2px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.btn-show-all {
-  font-size: 2rem;
-  background: var(--main-gray);
-  transition: background 0.3s ease-out;
-}
-
-.btn-show-all:hover {
-  background: var(--main-red);
-}
-
-.btn-show-all:hover > i {
-  transform: translateX(2px);
-}
-
-.btn-show-all > i {
-  margin-left: 10px;
-  transform: translateX(0);
-  transition: transform 0.3s ease-out;
-}
-
-/* Contact section */
+/* =====================================================================
+   Contact
+   ===================================================================== */
 
 .contact-section {
   display: flex;
@@ -266,66 +255,126 @@ img {
   align-items: center;
   text-align: center;
   width: 100%;
-  height: 80vh;
-  padding: 0 2rem;
-  background: var(--main-gray);
+  padding: 8rem 2rem;
+  background: var(--bg);
 }
 
 .contact-section-header > h2 {
-  font-size: 6rem;
+  font-size: 5.4rem;
 }
 
 @media (max-width: 28.75em) {
-  .contact-section-header > h2 {
-    font-size: 4rem;
-  }
+  .contact-section-header > h2 { font-size: 3.8rem; }
 }
 
 .contact-section-header > p {
   font-style: italic;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
 }
 
 .contact-links {
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 980px;
-  margin-top: 4rem;
+  max-width: 98rem;
+  margin-top: 3rem;
   flex-wrap: wrap;
+  gap: 1.2rem;
 }
 
 .contact-details {
-  font-size: 2.4rem;
-  text-shadow: 2px 2px 1px #494D5F;
-  transition: transform 0.3s ease-out;
+  font-size: 2rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
 }
 
-.contact-details:hover {
-  transform: translateY(8px);
+.contact-details:hover,
+.contact-details:focus-visible {
+  transform: translateY(-3px);
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
 }
 
-/* Footer */
+/* Contact form */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 100%;
+  max-width: 56rem;
+  margin: 5rem auto 0;
+  text-align: left;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.6rem;
+  color: var(--text-muted);
+}
+
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+  font-size: 1.7rem;
+  padding: 1.1rem 1.3rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 12rem;
+}
+
+.btn-submit {
+  align-self: flex-start;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+  font-size: 1.8rem;
+  padding: 1.2rem 2.4rem;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.btn-submit:hover,
+.btn-submit:focus-visible {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* =====================================================================
+   Footer
+   ===================================================================== */
 
 footer {
-  font-weight: 300;
   display: flex;
-  justify-content: space-evenly;
-  padding: 2rem;
-  background: var(--main-gray);
-  border-top: 4px solid var(--main-red);
+  justify-content: center;
+  padding: 2.4rem 2rem;
+  background: var(--surface);
+  border-top: 2px solid var(--accent);
+  color: var(--text-muted);
+  font-size: 1.4rem;
+  font-weight: 300;
 }
 
-footer > p {
-  margin: 2rem;
-}
+/* =====================================================================
+   Reduced motion
+   ===================================================================== */
 
-footer i {
-  vertical-align: middle;
-}
-
-@media (max-width: 28.75em) {
-  footer {
-    flex-direction: column;
-    text-align: center;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
