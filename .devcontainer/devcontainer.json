@@ -1,0 +1,32 @@
+{
+  "name": "weeyin83.github.io",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "remoteUser": "vscode",
+  "init": true,
+  "overrideCommand": true,
+  "updateRemoteUserUID": true,
+  "forwardPorts": [8080, 5500],
+  "portsAttributes": {
+    "8080": {
+      "label": "Python Static Server",
+      "onAutoForward": "notify"
+    },
+    "5500": {
+      "label": "Live Server",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.eol": "\n",
+        "editor.formatOnSave": true,
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "ritwickdey.LiveServer"
+      ]
+    }
+  }
+}
