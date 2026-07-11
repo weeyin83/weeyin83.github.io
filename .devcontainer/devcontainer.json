@@ -3,7 +3,7 @@
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
   "remoteUser": "vscode",
   "init": true,
-  "overrideCommand": false,
+  "overrideCommand": true,
   "updateRemoteUserUID": true,
   "forwardPorts": [8080, 5500],
   "portsAttributes": {
